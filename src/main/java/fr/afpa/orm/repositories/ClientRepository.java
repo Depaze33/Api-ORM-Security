@@ -13,7 +13,7 @@ import java.util.UUID;
  */
 @Repository
 public interface ClientRepository extends CrudRepository<Client, UUID> {
-    Optional<Client> findByEmail(UUID id);
+    Optional<Client> findById(UUID id);
 
 
 }
