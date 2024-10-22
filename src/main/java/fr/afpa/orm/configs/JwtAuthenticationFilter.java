@@ -1,6 +1,6 @@
 package fr.afpa.orm.configs;
 
-import fr.afpa.orm.service.JwtService;
+import fr.afpa.orm.services.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

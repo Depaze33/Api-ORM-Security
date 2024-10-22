@@ -11,33 +11,33 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-@Table(name = "users")
+
 @Entity
-public  class  User implements UserDetails {
+@Table(name = "user")
+public class User implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Integer id;
 
-    @Column(nullable = false, name = "full_name")
+    @Column( name = "full_name")
     private String fullName;
 
-    @Column(unique = true, length = 1000, nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "pass")
     private String password;
 
     @CreationTimestamp
-    @Column(updatable = false, name = "created_at")
+    @Column( name = "created_at")
     private Date createdAt;
 
     @UpdateTimestamp
     @Column(name = "updated_at")
     private Date updatedAt;
-public  User(){
 
-}
+    public User() {}
+
     public User(Integer id, String fullName, String email, String password, Date createdAt, Date updatedAt) {
         this.id = id;
         this.fullName = fullName;
@@ -59,16 +59,18 @@ public  User(){
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public User setFullName(String fullName) {
         this.fullName = fullName;
+        return this;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public User setEmail(String email) {
         this.email = email;
+        return this;
     }
 
     public Date getCreatedAt() {
@@ -113,8 +115,9 @@ public  User(){
         return true;
     }
 
-    public void setPassword(String password) {
+    public User setPassword(String password) {
         this.password = password;
+        return this;
     }
 
     public Date getUpdatedAt() {
