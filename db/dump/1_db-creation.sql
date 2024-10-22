@@ -18,3 +18,12 @@ CREATE TABLE account
     balance      bigint,
     id_client UUID references client (id)
 );
+
+CREATE TABLE USER (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(200),
+    email VARCHAR(1000),
+    password VARCHAR(100),
+    creat_at DATE,
+    update_at DATE
+)
