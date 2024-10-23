@@ -11,21 +11,20 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-
 @Entity
-@Table(name = "user")
+@Table(name = "\"user\"")
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private Integer id;
 
     @Column( name = "full_name")
     private String fullName;
 
+    @Column(name="email")
     private String email;
 
-    @Column(name = "pass")
+    @Column(name = "password")
     private String password;
 
     @CreationTimestamp
